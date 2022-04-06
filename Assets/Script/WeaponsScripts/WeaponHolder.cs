@@ -157,6 +157,10 @@ public class WeaponHolder : MonoBehaviour
 
     public void UnEquipWeapon()
     {
+        if (!equippedWeapon) return;
 
+        Destroy(equippedWeapon.gameObject);
+
+        equippedWeapon = null;
     }
 }
