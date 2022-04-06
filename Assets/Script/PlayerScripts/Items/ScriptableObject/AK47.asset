@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: AK-47
   itemCategory: 1
-  itemPreFab: {fileID: 1367092332615174761, guid: 540042b6f31a31c4d99d24ad181fa328, type: 3}
+  itemPrefab: {fileID: 1367092332615174761, guid: 540042b6f31a31c4d99d24ad181fa328, type: 3}
   stackable: 0
   maxSize: 1
   amountValue: 1
