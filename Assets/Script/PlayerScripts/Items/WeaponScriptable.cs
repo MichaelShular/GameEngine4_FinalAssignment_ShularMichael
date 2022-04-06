@@ -13,12 +13,12 @@ public class WeaponScriptable : EquippableScript
     {
         if (equipped)
         {
-
+            playerController.weaponHolder.UnEquipWeapon();
         }
         else
         {
             playerController.weaponHolder.EquipWeapon(this);
-            PlayerEvents.InvokeOnWeaponEquipped(itemPrefab.GetComponent<WeaponComponent>());
+            
         }
 
         base.UseItem(playerController);

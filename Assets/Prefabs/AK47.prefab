@@ -92,6 +92,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     totalBullets: 500
+  firingEffect: {fileID: 812701995559341313}
   isFiring: 0
   isReloading: 0
 --- !u!1 &7825034861561063856
@@ -201,6 +202,11 @@ PrefabInstance:
 --- !u!4 &717919996905619847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4056852919073388, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
+  m_PrefabInstance: {fileID: 718598749325114347}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &812701995559341313 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198076924919084778, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
   m_PrefabInstance: {fileID: 718598749325114347}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1367092332191155948

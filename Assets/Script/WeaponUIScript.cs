@@ -19,7 +19,7 @@ public class WeaponUIScript : MonoBehaviour
         PlayerEvents.OnWeaponEquipped -= OnWeaponEquipped;
 
     }
-    void OnWeaponEquipped(WeaponComponent _weaponComponent)
+    public void OnWeaponEquipped(WeaponComponent _weaponComponent)
     {
         weaponComponent = _weaponComponent;
     }

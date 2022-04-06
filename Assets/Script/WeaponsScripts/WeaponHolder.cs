@@ -13,6 +13,8 @@ public class WeaponHolder : MonoBehaviour
 
     GameObject spawnedWeapon;
 
+    public WeaponUIScript weaponUI;
+
    [SerializeField]
     GameObject weaponSocketLocation;
     [SerializeField]
@@ -91,7 +93,8 @@ public class WeaponHolder : MonoBehaviour
         equippedWeapon.StopFiringWeapon();
     }
     public void OnReload(InputValue value)
-    {        
+    {
+        if (!equippedWeapon) return;
         playerController.isReloading = value.isPressed;
         StartReloading();
     }
@@ -140,14 +143,16 @@ public class WeaponHolder : MonoBehaviour
 
 
         equippedWeapon = spawnedWeapon.GetComponent<WeaponComponent>();
-        
-        
-        
-        equippedWeapon.Initialize(this);
 
+        if (!equippedWeapon) return;
+        equippedWeapon.Initialize(this, weaponScriptable);
         PlayerEvents.InvokeOnWeaponEquipped(equippedWeapon);
-        gripIKSocketLocation = equippedWeapon.gripLocation;
+        
+        
 
+        
+        gripIKSocketLocation = equippedWeapon.gripLocation;
+        weaponUI.OnWeaponEquipped(equippedWeapon);
     }
 
     public void UnEquipWeapon()
