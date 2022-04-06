@@ -14,11 +14,14 @@ public class PlayerController : MonoBehaviour
     public InventoryComponent inventory;
     public bool inInventory;
     public GameUIController uIController;
+    public WeaponHolder weaponHolder;
+
 
     private void Awake()
     {
         inventory = GetComponent<InventoryComponent>();
         uIController = FindObjectOfType<GameUIController>();
+        weaponHolder = GetComponent<WeaponHolder>();
     }
     public void OnInventory(InputValue value)
     {

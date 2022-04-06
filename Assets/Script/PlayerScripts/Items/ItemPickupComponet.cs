@@ -42,6 +42,13 @@ public class ItemPickupComponet : MonoBehaviour
     {
         if (other.CompareTag("Player")) return;
 
+        InventoryComponent playerInventoy = other.GetComponent<InventoryComponent>();
+
+        if (playerInventoy)
+        {
+            playerInventoy.AddItem(itemInstance, amount);
+        }
+
         Destroy(gameObject);
     }
 
