@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,4 +12,30 @@ public class PlayerController : MonoBehaviour
     public bool isAiming;
 
     public InventoryComponent inventory;
+    public bool inInventory;
+    public GameUIController uIController;
+
+    private void Awake()
+    {
+        inventory = GetComponent<InventoryComponent>();
+        uIController = FindObjectOfType<GameUIController>();
+    }
+    public void OnInventory(InputValue value)
+    {
+
+        inInventory = !inInventory;
+        OpenInventory(inInventory);
+    }
+
+    public void OpenInventory(bool open)
+    {
+        if (open)
+        {
+            uIController.EnableInventoryMenu();
+        }
+        else
+        {
+            uIController.EnableGameMenu();
+        }
+    }
 }
