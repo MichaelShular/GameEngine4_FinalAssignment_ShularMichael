@@ -15,13 +15,14 @@ public class PlayerController : MonoBehaviour
     public bool inInventory;
     public GameUIController uIController;
     public WeaponHolder weaponHolder;
-
+    public HealthComponent healthComponent;
 
     private void Awake()
     {
         inventory = GetComponent<InventoryComponent>();
         uIController = FindObjectOfType<GameUIController>();
         weaponHolder = GetComponent<WeaponHolder>();
+        healthComponent = GetComponent<HealthComponent>();
     }
     public void OnInventory(InputValue value)
     {

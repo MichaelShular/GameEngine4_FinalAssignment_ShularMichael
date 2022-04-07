@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnerVolume : MonoBehaviour
 {
-    BoxCollider boxCollider;    
+    public BoxCollider boxCollider;
+    public Bounds boxBounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class SpawnerVolume : MonoBehaviour
 
     public Vector3 GetPositionInBounds()
     {
-        Bounds boxBounds = boxCollider.bounds;
+        boxBounds = boxCollider.bounds;
         return new Vector3(Random.Range(boxBounds.min.x, boxBounds.max.x), transform.position.y, Random.Range(boxBounds.min.z, boxBounds.max.z));
     }
 }

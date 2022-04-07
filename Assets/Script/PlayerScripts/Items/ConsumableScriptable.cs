@@ -9,6 +9,8 @@ public class ConsumableScriptable : ItemScript
     public int effect = 0;
     public override void UseItem(PlayerController playerController)
     {
+
+
         SetAmount(amountValue - 1);
 
         if(amountValue <= 0)

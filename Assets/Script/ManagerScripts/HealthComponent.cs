@@ -31,7 +31,9 @@ public class HealthComponent : MonoBehaviour, IDamagable
             Destory();
         }
     }
-
-
+    public void HealPlayer(int value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + value, 0, maxHealth);
+    }
 
 }
