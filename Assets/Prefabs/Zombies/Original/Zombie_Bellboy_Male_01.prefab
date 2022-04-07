@@ -3295,6 +3295,7 @@ GameObject:
   - component: {fileID: 1058169029}
   - component: {fileID: 1058169030}
   - component: {fileID: 2350443653047674128}
+  - component: {fileID: 1058169031}
   m_Layer: 0
   m_Name: Zombie_Bellboy_Male_01
   m_TagString: Untagged
@@ -3405,7 +3406,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1058169029
@@ -3451,6 +3452,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 150
   maxHealth: 150
+--- !u!136 &1058169031
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418193975600942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1423411692011380
 GameObject:
   m_ObjectHideFlags: 0
