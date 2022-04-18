@@ -30,5 +30,6 @@ public enum ZombieStateType
     Idling,
     Attack,
     Following,
-    Dying
+    Dying,
+    Protecting
 }

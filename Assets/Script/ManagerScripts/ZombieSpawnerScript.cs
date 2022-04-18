@@ -8,6 +8,7 @@ public class ZombieSpawnerScript : MonoBehaviour
     public GameObject[] zombiesPrefabs;
     public SpawnerVolume[] spawnerVolumes;
 
+    public GameObject protectLocation;
     GameObject followTarget;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,6 @@ public class ZombieSpawnerScript : MonoBehaviour
 
         GameObject zombie = Instantiate(zombieToSpawn, spawnerVolume.GetPositionInBounds(), spawnerVolume.transform.rotation);
 
-        zombie.GetComponent<ZombieComponent>().Initialize(followTarget);
+        zombie.GetComponent<ZombieComponent>().Initialize(followTarget, protectLocation);
     }
 }

@@ -11,6 +11,8 @@ public class ZombieComponent : MonoBehaviour
     public Animator zombieAnimator;
     public ZombieStateMachine zombieStateMachine;
     public GameObject followTarget;
+    public GameObject spawn;
+
 
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class ZombieComponent : MonoBehaviour
         zombieAnimator = GetComponent<Animator>();
         zombieStateMachine = GetComponent<ZombieStateMachine>();
         
-        Initialize(followTarget);
+        //Initialize(followTarget, spawn);
     }
 
     public void Start()
@@ -26,9 +28,10 @@ public class ZombieComponent : MonoBehaviour
         
     }
 
-    public void Initialize(GameObject _followTarget)
+    public void Initialize(GameObject _followTarget, GameObject _Spawn)
     {
         followTarget = _followTarget;
+        spawn = _Spawn;
 
         ZombieIdleState idleState = new ZombieIdleState(this, zombieStateMachine);
         zombieStateMachine.AddState(ZombieStateType.Idling, idleState);
@@ -42,6 +45,9 @@ public class ZombieComponent : MonoBehaviour
         ZombieDyingState deadState = new ZombieDyingState(this, zombieStateMachine);
         zombieStateMachine.AddState(ZombieStateType.Dying, deadState);
 
-        zombieStateMachine.Initialize(ZombieStateType.Following);
+        ZombieProtectState protectState = new ZombieProtectState(followTarget, spawn, this, zombieStateMachine);
+        zombieStateMachine.AddState(ZombieStateType.Protecting, protectState);
+
+        zombieStateMachine.Initialize(ZombieStateType.Protecting);
     }
 }
