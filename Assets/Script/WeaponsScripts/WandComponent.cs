@@ -33,7 +33,7 @@ public class WandComponent : WeaponComponent
             GameObject temp = Instantiate(manaBall);
             temp.transform.position = this.gameObject.transform.position;
             temp.transform.forward = mainCamera.transform.forward;
-
+            temp.GetComponent<ManaBallMovement>().damage = weaponStats.damage;
 
         }
         else if (weaponStats.bulletsInClip <= 0)

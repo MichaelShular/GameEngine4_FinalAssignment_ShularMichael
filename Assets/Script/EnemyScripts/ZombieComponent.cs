@@ -17,7 +17,7 @@ public class ZombieComponent : MonoBehaviour
     private void Awake()
     {
         zombieNavMeshAgent = GetComponent<NavMeshAgent>();
-        zombieAnimator = GetComponent<Animator>();
+        zombieAnimator = GetComponentInChildren<Animator>();
         zombieStateMachine = GetComponent<ZombieStateMachine>();
         
         //Initialize(followTarget, spawn);

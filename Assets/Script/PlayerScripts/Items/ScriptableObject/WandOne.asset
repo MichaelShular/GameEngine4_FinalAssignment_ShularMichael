@@ -22,7 +22,7 @@ MonoBehaviour:
     weaponType: 2
     firePattern: 1
     weaponName: Wand
-    damage: 5
+    damage: 35
     bulletsInClip: 10
     clipSize: 10
     fireStartDelay: 0

@@ -6,6 +6,7 @@ public class ManaBallMovement : MonoBehaviour
 {
     private Rigidbody rdbody;
     public float speed;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,13 @@ public class ManaBallMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Crystal"))
+        {
+            IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
+            damagable?.TakeDamage(damage);
+        }
+
+
         Destroy(this.gameObject);
     }
 
